@@ -1,4 +1,5 @@
-﻿using DDD.WinForm.Common;
+﻿using DDD.Domain.Helpers;
+using DDD.WinForm.Common;
 using DDD.WinForm.Data;
 using System;
 using System.Collections.Generic;
@@ -23,17 +24,17 @@ namespace DDD.WinForm
 
         private void BtnLatest_Click(object sender, EventArgs e)
         {
-            var dt = WeatherSQLite.GetLatest(Convert.ToInt32(TxtAreaId.Text));
+            //var dt = WeatherSQLite.GetLatest(Convert.ToInt32(TxtAreaId.Text));
 
-            if (dt.Rows.Count > 0)
-            {
-                LblDataDate.Text = dt.Rows[0]["DataDate"].ToString();
-                LblCondition.Text = dt.Rows[0]["Condition"].ToString();
-                LblTemperature.Text =
-                    CommonFunc.RoundString(Convert.ToSingle(dt.Rows[0]["Temperature"]),
-                                           CommonConst.TemperatureDecimalPoint)
-                                            + CommonConst.TemperatureUnitName;
-            }
+            //if (dt.Rows.Count > 0)
+            //{
+            //    LblDataDate.Text = dt.Rows[0]["DataDate"].ToString();
+            //    LblCondition.Text = dt.Rows[0]["Condition"].ToString();
+            //    LblTemperature.Text =
+            //        FloatHelper.RoundString(Convert.ToSingle(dt.Rows[0]["Temperature"]),
+            //                               CommonConst.TemperatureDecimalPoint)
+            //                                + CommonConst.TemperatureUnitName;
+            //}
         }
 
         

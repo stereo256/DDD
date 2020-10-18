@@ -1,4 +1,5 @@
 ﻿
+using DDD.Domain.ValueObjects;
 using System;
 
 namespace DDD.Domain.Entities
@@ -13,14 +14,14 @@ namespace DDD.Domain.Entities
         {
             AreaId = areaId;
             DataDate = dataDate;
-            Condition = condition;
-            Temperature = temperature;
+            Condition = new Condition(condition);
+            Temperature = new Temperature(temperature);
         }
 
         public int AreaId { get;}
         public DateTime DataDate { get; }
-        public int Condition { get; }
-        public float Temperature { get; }
+        public Condition Condition { get; }
+        public Temperature Temperature { get; }
 
     }
 }
